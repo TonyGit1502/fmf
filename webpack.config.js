@@ -33,11 +33,7 @@ module.exports = {
             },
             {
                 test: /\.(jpg|png)$/,
-                loader: "file-loader",
-                options: {
-                    outputPath: "",
-                    publicPath: ""
-                }
+                loader: "file-loader"
             },
             {
                 test: /\.html$/,
