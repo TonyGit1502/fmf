@@ -1,0 +1,147 @@
+/******************** Colors ********************/
+$loader-switch-bg: #27ae60;
+$loader-switch-border: #ecf0f1;
+
+$loader-border: #cfd8dc;
+
+$red-bg: #e74c3c;
+$green-bg: #2ecc71;
+$blue-bg: #2980b9;
+$yellow-bg: #f1c40f;
+
+$black: #333;
+$white: #fff;
+/*********************************************************/
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 32px;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.slide-switch-wrapper {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.slide-switch {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 36px;
+  width: 100%;
+  background-color: $white;
+  border-radius: 4px;
+  color: $black;
+  transition: .3s ease;
+
+  &:hover {
+    background-color: $loader-switch-bg;
+    cursor: pointer;
+    color: $white;
+    padding-left: 20px;
+  }
+}
+
+.slide-switch-active {
+  background-color: $loader-switch-bg;
+  color: $white;
+  padding-left: 20px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+.slider-actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+
+}
+
+.slider-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 30%;
+  transition: .3s ease;
+  background-color: $white;
+
+  img {
+    user-select: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: transparentize($green-bg, .4);
+  }
+}
+
+#prev {
+  border-radius: 20px 0 0 20px;
+}
+
+#next {
+  border-radius: 0 20px 20px 0;
+}
+
+.slides {
+  position: relative;
+  display: inline-block;
+  height: 500px;
+  width: 750px;
+  border-radius: 20px;
+  border: 1px solid $loader-border;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .7;
+  transition: all .5s linear;
+  z-index: 1;
+  border-radius: 20px;
+}
+
+.active {
+  opacity: 1;
+  z-index: 5;
+}
